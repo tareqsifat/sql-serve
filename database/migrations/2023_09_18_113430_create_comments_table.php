@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
+            $table->integer('post_id')->nullable();
+            $table->string('body')->nullable()->default("NULL");
+            $table->string('image')->nullable()->default("NULL");
+            $table->integer('creator')->nullable();
+            $table->string('slug')->nullable();
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }
