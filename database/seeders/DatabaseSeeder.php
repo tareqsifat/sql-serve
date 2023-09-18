@@ -24,13 +24,13 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        for($i = 0; $i < 10; $i++){
+        for($i = 1; $i <= 10; $i++){
             User::create([
                 'name' => "Test User Name $i",
                 'email' => "test_$i@example.com",
                 'password' => Hash::make('password123')
             ]);
-            for($j = 0; $j < 10; $j++){
+            for($j = 1; $j <= 10; $j++){
                 Post::create([
                     "title" => "Test Post Title i=>$i, j => $j",
                     'body' => "Test Post Body i=>$i, j => $j",
@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
                     'slug' => "test-slug j=>$j",
                     'status' => 1,
                 ]);
-                for($k=0; $k < 10; $k++){
+                for($k=1; $k <= 10; $k++){
                     Comment::create([
                         'post_id' => $j,
                         'body' => "Test Comment Body i=>$i, j => $j, k => $k",
